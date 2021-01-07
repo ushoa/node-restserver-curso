@@ -24,7 +24,7 @@ mongoose.connect('mongodb://localhost:27017/cafe', {
         throw err;
 
     }
-    console.log('Base de Datos online');
+    console.log('DDBB on line');
 
 });
 
