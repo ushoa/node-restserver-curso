@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 
 app.use(require('./routes/usuario'));
 
-mongoose.connect('mongodb://localhost:27017/cafe', {
+mongoose.connect(process.env.URL_DB, {
         useNewUrlParser: true,
         useFindAndModify: false,
         useCreateIndex: true,
