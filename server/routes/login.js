@@ -15,7 +15,6 @@ app.post('/login', (req, res) => {
         if (!usuarioDB) {
             return res.status(400).json({
                 ok: false,
-                mail: usuarioDB.usuarioDB,
                 err: {
                     message: '(Usuario) y contraseña no coinciden'
                 }
