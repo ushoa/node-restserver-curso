@@ -29,11 +29,11 @@ app.post('/login', (req, res) => {
                 }
             });
         }
-        let token = jwt.sing({ usuario: usuarioDB }, 'secret', { expiresIn: 60 * 60 });
+        let token = jwt.sing({ usuario: usuarioDB }, process.env.SEED, { expiresIn: process.env.TIEMPO_TOKEN });
         res.json({
             ok: true,
             usuario: usuarioDB,
-            token
+            tok: token
         });
     });
 });

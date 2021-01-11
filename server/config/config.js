@@ -7,6 +7,11 @@ process.env.PORT = process.env.PORT || 3000;
 // ============================
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 // ============================
+//  Vencimiento token || SEED
+// ============================
+process.env.TIEMPO_TOKEN = 60 * 60;
+process.env.SEED = process.env.SEED || 'secret';
+// ============================
 //  DB
 // ============================
 if (process.env.NODE_ENV == 'dev') {
