@@ -16,7 +16,7 @@ app.post('/login', (req, res) => {
             return res.status(400).json({
                 ok: false,
                 err: {
-                    message: '(Usuario) y contraseña no coinciden'
+                    message: 'Usuario y contraseña no coinciden'
                 }
             });
         }
@@ -24,7 +24,7 @@ app.post('/login', (req, res) => {
             return res.status(400).json({
                 ok: false,
                 err: {
-                    message: 'Usuario y (contraseña) no coinciden'
+                    message: 'Usuario y contraseña no coinciden'
                 }
             });
         }
