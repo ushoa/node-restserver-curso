@@ -29,7 +29,9 @@ app.post('/login', (req, res) => {
                 }
             });
         }
-        let token = jwt.sing({ usuario: usuarioDB }, process.env.SEED, { expiresIn: process.env.TIEMPO_TOKEN });
+        let token = jwt.sign({
+            usuario: usuarioDB
+        }, process.env.SEED, { expiresIn: process.env.TIEMPO_TOKEN });
         res.json({
             ok: true,
             usuario: usuarioDB,
