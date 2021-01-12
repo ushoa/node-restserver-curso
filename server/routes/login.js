@@ -1,7 +1,7 @@
 const express = require('express')
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const Usuario = require('../models/usuaro');
+const jwt = require('jsonwebtoken');
 const app = express();
 
 app.post('/login', (req, res) => {
@@ -29,13 +29,11 @@ app.post('/login', (req, res) => {
                 }
             });
         }
-        let token = jwt.sign({
-            usuario: usuarioDB
-        }, process.env.SEED, { expiresIn: process.env.TIEMPO_TOKEN });
+        let token = jwt.sign({ usuario: usuarioDB }, process.env.SEED, { expiresIn: process.env.TIEMPO_TOKEN });
         res.json({
             ok: true,
-            usuario: usuarioDB,
-            tok: token
+            usuarioDB,
+            token
         });
     });
 });
