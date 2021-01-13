@@ -12,6 +12,10 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 process.env.TIEMPO_TOKEN = "5h";
 process.env.SEED = process.env.SEED || 'seed-produccion';
 // ============================
+//  Google Client ID
+// ============================
+process.env.CLIENT_ID = process.env.CLIENT_ID || '459993929027 - pd35n2ut0aejbm0q3nnir4ki6ol2np9c.apps.googleusercontent.com';
+// ============================
 //  DB
 // ============================
 if (process.env.NODE_ENV == 'dev') {
