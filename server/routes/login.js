@@ -58,14 +58,14 @@ async function verify(token) {
 //verify().catch(console.error);
 app.post('/google', async(req, res) => {
     let token = req.body.idtoken;
-    try {
-        let googleUser = await verify(token);
-    } catch (error) {
-        return res.status(403).json({
-            ok: false,
-            err: error
+    let googleUser = await verify(token)
+        .catch(e => {
+            return res.status(403).json({
+                ok: false,
+                menssage: 'Error del promesa',
+                e
+            });
         });
-    }
     Usuario.findOne({ email: googleUser.email }, (err, usuarioDB) => {
         if (err) {
             return res.status(500).json({
@@ -103,7 +103,7 @@ app.post('/google', async(req, res) => {
                         err
                     });
                 };
-                let token = jwt.sign({ usuario: usuarioDB }, process.env.SEED, { expiresIn: process.env.TIEMPO_TOKEN });
+                //let token = jwt.sign({ usuario: usuarioDB }, process.env.SEED, { expiresIn: process.env.TIEMPO_TOKEN });
                 return res.json({
                     ok: true,
                     usuario: usuarioDB,

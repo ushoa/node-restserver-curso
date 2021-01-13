@@ -14,7 +14,7 @@ process.env.SEED = process.env.SEED || 'seed-produccion';
 // ============================
 //  Google Client ID
 // ============================
-process.env.CLIENT_ID = process.env.CLIENT_ID || '459993929027 - pd35n2ut0aejbm0q3nnir4ki6ol2np9c.apps.googleusercontent.com';
+process.env.CLIENT_ID = process.env.CLIENT_ID || '459993929027-pd35n2ut0aejbm0q3nnir4ki6ol2np9c.apps.googleusercontent.com';
 // ============================
 //  DB
 // ============================
