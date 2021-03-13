@@ -12,7 +12,6 @@ let chekToken = (req, res, next) => {
             });
         }
         req.usuario = decoded.usuario;
-        console.log(token);
         next();
     })
 }

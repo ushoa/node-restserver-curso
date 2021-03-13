@@ -1,7 +1,7 @@
 const express = require('express')
 const bcrypt = require('bcrypt');
 const _ = require('underscore');
-const Usuario = require('../models/usuaro');
+const Usuario = require('../models/usuario');
 const { chekToken } = require('../middlewares/autenticacion');
 const app = express();
 
@@ -72,7 +72,7 @@ app.put('/usuario/:id', chekToken, function(req, res) {
             ok: true,
             user: usuarioDB
         });
-    })
+    });
 });
 
 app.delete('/usuario/:id', chekToken, function(req, res) {

@@ -1,6 +1,6 @@
 const express = require('express')
 const bcrypt = require('bcrypt');
-const Usuario = require('../models/usuaro');
+const Usuario = require('../models/usuario');
 const jwt = require('jsonwebtoken');
 const { OAuth2Client } = require('google-auth-library');
 const client = new OAuth2Client(process.env.CLIENT_ID);
