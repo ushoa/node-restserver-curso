@@ -19,7 +19,7 @@ app.post('/login', (req, res) => {
             return res.status(400).json({
                 ok: false,
                 err: {
-                    message: 'Usuario y contraseña no coinciden'
+                    message: '{Usuario} y contraseña no coinciden'
                 }
             });
         }
@@ -95,6 +95,8 @@ app.post('/google', async(req, res) => {
             usuario.img = googleUser.img;
             usuario.google = true;
             usuario.pass = ':)';
+            tk=jwt.decode(tokenBase64)
+
 
             usuario.save((err, usuarioDB) => {
                 if (err) {
@@ -107,7 +109,9 @@ app.post('/google', async(req, res) => {
                 return res.json({
                     ok: true,
                     usuario: usuarioDB,
-                    token
+                    token,
+                    expired:tk.exp
+                    
                 });
 
             });

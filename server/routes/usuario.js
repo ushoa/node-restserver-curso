@@ -31,6 +31,7 @@ app.get('/usuario', chekToken, (req, res) => {
                 });
             })
         });
+    console.log(Usuario)
 });
 
 app.post('/usuario', chekToken, function(req, res) {
