@@ -4,6 +4,7 @@ const Usuario = require('../models/usuario');
 const jwt = require('jsonwebtoken');
 const { OAuth2Client } = require('google-auth-library');
 const client = new OAuth2Client(process.env.CLIENT_ID);
+
 const app = express();
 
 app.post('/login', (req, res) => {
@@ -95,7 +96,7 @@ app.post('/google', async(req, res) => {
             usuario.img = googleUser.img;
             usuario.google = true;
             usuario.pass = ':)';
-            tk=jwt.decode(tokenBase64)
+            tk=jwt.decode(token)
 
 
             usuario.save((err, usuarioDB) => {
@@ -111,7 +112,6 @@ app.post('/google', async(req, res) => {
                     usuario: usuarioDB,
                     token,
                     expired:tk.exp
-                    
                 });
 
             });
