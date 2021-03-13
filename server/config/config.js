@@ -9,7 +9,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 // ============================
 //  Vencimiento token || SEED
 // ============================
-process.env.TIEMPO_TOKEN = "5h";
+process.env.TIEMPO_TOKEN = "15000";
 process.env.SEED = process.env.SEED || 'seed-produccion';
 // ============================
 //  Google Client ID
